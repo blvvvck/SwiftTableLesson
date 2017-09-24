@@ -160,7 +160,6 @@ struct InformationViewModelMoreInfoItem: InformationViewModelItem {
 }
 
 class InformationAboutUserTableViewController: UITableViewController {
-    //переставить вары на леты
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var surnameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
