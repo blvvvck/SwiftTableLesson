@@ -8,164 +8,12 @@
 
 import UIKit
 
-enum InformationViewModelItemType {
-    case status
-    case mainInfo
-    case contacts
-    case carier
-    case education
-    case gifts
-    case moreInfo
-}
-
-protocol InformationViewModelItem {
-    var type: InformationViewModelItemType { get }
-    var sectionType: String { get }
-    var rowCount: Int { get }
-}
-
-struct InformationViewModelStatusItem: InformationViewModelItem {
-    var type: InformationViewModelItemType {
-        return .status
-    }
-    
-    var sectionType: String {
-        return ""
-    }
-    
-    var rowCount: Int{
-        return 1
-    }
-    
-    var status: String
-}
-
-struct MainInfo {
-    var title: String
-    var info: String
-}
-
-struct InformationViewModelMainInfoItem: InformationViewModelItem {
-    var type: InformationViewModelItemType {
-        return .mainInfo
-    }
-    
-    var sectionType: String {
-        return ""
-    }
-    
-    var rowCount: Int{
-        return mainInformations.count
-    }
-    
-    var mainInformations: [MainInfo]
-}
-
-struct Contacts {
-    var image: UIImage
-    var contact: String
-}
-
-struct InformationViewModelContactsItem: InformationViewModelItem {
-    var type: InformationViewModelItemType {
-        return .contacts
-    }
-    
-    var sectionType: String {
-        return "КОНТАКТЫ"
-    }
-    
-    var rowCount: Int {
-        return contacts.count
-    }
-    
-    var contacts: [Contacts]
-}
-
-struct InformationViewModelCarierItem: InformationViewModelItem {
-    var type: InformationViewModelItemType {
-        return .carier
-    }
-    
-    var sectionType: String {
-        return "КАРЬЕРА"
-    }
-    
-    var rowCount: Int {
-        return 1
-    }
-    
-    var company: String
-    var locationAndPeriod: String
-    var position: String
-}
-
-struct EducationalEstablishments {
-    var type: String
-    var name: String
-}
-
-struct InformationViewModelEducationItem: InformationViewModelItem {
-    var type: InformationViewModelItemType {
-        return .education
-    }
-    
-    var sectionType: String {
-        return "ОБРАЗОВАНИЕ"
-    }
-    
-    var rowCount: Int {
-        return 2
-    }
-    
-    var educationaEstablishments: [EducationalEstablishments]
-}
-
-struct InformationViewModelGiftsItem: InformationViewModelItem {
-    var type: InformationViewModelItemType {
-        return .gifts
-    }
-    
-    var sectionType: String {
-        return ""
-    }
-    
-    var rowCount: Int {
-        return 1
-    }
-    
-    var giftNumbers: String
-    
-}
-
-struct MoreInfo {
-    var title: String
-    var count: String
-}
-
-struct InformationViewModelMoreInfoItem: InformationViewModelItem {
-    var type: InformationViewModelItemType {
-        return .moreInfo
-    }
-    
-    var sectionType: String {
-        return ""
-    }
-    
-    var rowCount: Int {
-        return 3
-    }
-    
-    var moreInformations: [MoreInfo]
-}
-
 class InformationAboutUserTableViewController: UITableViewController {
-    //переставить вары на леты
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var surnameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var avatarImageView: UIImageView!
     
     var items: [InformationViewModelItem] = []
     let mainInfoCellIdentifier = "mainInfoCell"
@@ -176,9 +24,15 @@ class InformationAboutUserTableViewController: UITableViewController {
     let giftsCellIdentifier = "giftsCell"
     let moreInfoCellIdentifier = "moreInfoCell"
     
+    let contactsCellHeight: CGFloat = 40
+    let carierCellHeight: CGFloat = 78
+    let mainInfoCellHeight: CGFloat = 49
+    let giftsCellHeight: CGFloat = 122
+    let defaultCellHeight: CGFloat = 44
+    
     let statusArray = ["NAVI VPERED!!!", "VP TOP1", "DOMOIII"]
     let mainInfoTitleArray = ["День рождения", "Место работы", "Семейное положение", "Языки", "Родители"]
-    let mainInfoSubtitleArry = [ ["21 июля 1998", "16 января 2000"], ["Apple", "Google"], ["Женат", "Есть подруга"], ["Русский, Испанский", "Английский, Итальянский"], ["Иван Иванов, Мария Иванова", "Петр Петров, Анна Петрова"] ]
+    let mainInfoSubtitleArray = [ ["21 июля 1998", "16 января 2000"], ["Apple", "Google"], ["Женат", "Есть подруга"], ["Русский, Испанский", "Английский, Итальянский"], ["Иван Иванов, Мария Иванова", "Петр Петров, Анна Петрова"] ]
     let contactArray = [ ["89536777391", "89005258501"], ["Киров", "Казань"], ["super_nagibator", "ios_NINJA"] ]
     let contactImageArray = [UIImage(named: "phoneContact")!, UIImage(named: "homeContact")!, UIImage(named: "vkContact")!]
     let carierCompanyArray = ["Apple", "Google",]
@@ -188,13 +42,15 @@ class InformationAboutUserTableViewController: UITableViewController {
     let educationNameArray = [ ["КФУ", "ВятГУ", "MIT"], ["Школа №10", "ФизМат Лицей"] ]
     let giftsNumberArray = ["20 подарков", "21 подарок", "16 подарков"]
     let moreInfoTitleArray = ["Интересные страницы", "Заметки", "Документы"]
-    let moreInfoCountArray = [["102 >", "131 >", "116 >"], ["321 >", "123 >"], ["401 >", "291 >"]]
+    let moreInfoCountArray = [["102", "131", "116"], ["321", "123"], ["401", "291"]]
     
     var name: String = ""
     var surname: String = ""
     var age: String = ""
     var location: String = ""
     var avatarFrom: UIImage = UIImage(named: "gift1")!
+    
+    let radiusRoundCorner: CGFloat = 50
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -207,29 +63,51 @@ class InformationAboutUserTableViewController: UITableViewController {
         initGifts()
         initMoreInfo()
         profileFromMainView()
+        newDataInTable()
+        cellRegistration()
+        setRightBarButtonImage()
+        setNavigationBarTitle()
+    }
+    
+    func setRightBarButtonImage() {
+        let btn1 = UIButton(type: .custom)
+        btn1.setImage(UIImage(named: "17223"), for: .normal)
+        btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        let item1 = UIBarButtonItem(customView: btn1)
+        self.navigationItem.setRightBarButton(item1, animated: true)
+    }
+    
+    func setNavigationBarTitle() {
+        self.navigationItem.title = name
+    }
+    
+    func cellRegistration() {
         
-        self.refreshControl?.addTarget(self, action: #selector(InformationAboutUserTableViewController.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+        let statusCellNib = UINib(nibName: "StatusTableViewCell", bundle: nil)
+        tableView.register(statusCellNib, forCellReuseIdentifier: statusCellIdentifier)
         
-        let nib = UINib(nibName: "StatusTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: statusCellIdentifier)
+        let mainInfoCellNib = UINib(nibName: "MainInfoTableViewCell", bundle: nil)
+        tableView.register(mainInfoCellNib, forCellReuseIdentifier: mainInfoCellIdentifier)
         
-        let nib1 = UINib(nibName: "MainInfoTableViewCell", bundle: nil)
-        tableView.register(nib1, forCellReuseIdentifier: mainInfoCellIdentifier)
+        let contactsCellNib = UINib(nibName: "ContactsTableViewCell", bundle: nil)
+        tableView.register(contactsCellNib, forCellReuseIdentifier: contactsCellIdentifier)
         
-        let nib2 = UINib(nibName: "ContactsTableViewCell", bundle: nil)
-        tableView.register(nib2, forCellReuseIdentifier: contactsCellIdentifier)
+        let carierCellNib = UINib(nibName: "CarierTableViewCell", bundle: nil)
+        tableView.register(carierCellNib, forCellReuseIdentifier: carierCellIdentifier)
         
-        let nib3 = UINib(nibName: "CarierTableViewCell", bundle: nil)
-        tableView.register(nib3, forCellReuseIdentifier: carierCellIdentifier)
+        let educationCellNib = UINib(nibName: "EducationTableViewCell", bundle: nil)
+        tableView.register(educationCellNib, forCellReuseIdentifier: educationCellIdentifier)
         
-        let nib4 = UINib(nibName: "EducationTableViewCell", bundle: nil)
-        tableView.register(nib4, forCellReuseIdentifier: educationCellIdentifier)
+        let giftsCellNib = UINib(nibName: "GiftsTableViewCell", bundle: nil)
+        tableView.register(giftsCellNib, forCellReuseIdentifier: giftsCellIdentifier)
         
-        let nib5 = UINib(nibName: "GiftsTableViewCell", bundle: nil)
-        tableView.register(nib5, forCellReuseIdentifier: giftsCellIdentifier)
+        let moreIndoCellNib = UINib(nibName: "MoreInfoTableViewCell", bundle: nil)
+        tableView.register(moreIndoCellNib, forCellReuseIdentifier: moreInfoCellIdentifier)
         
-        let nib6 = UINib(nibName: "MoreInfoTableViewCell", bundle: nil)
-        tableView.register(nib6, forCellReuseIdentifier: moreInfoCellIdentifier)
+    }
+    
+    func newDataInTable(){
+        refreshControl?.addTarget(self, action: #selector(self.handleRefresh(refreshControl:)), for: .valueChanged)
     }
     
     func profileFromMainView() {
@@ -237,8 +115,8 @@ class InformationAboutUserTableViewController: UITableViewController {
         surnameLabel.text = surname
         ageLabel.text = age
         locationLabel.text = location
-        avatar.image = avatarFrom
-        ViewController().imageCorners(with: avatar)
+        avatarImageView.image = avatarFrom
+        avatarImageView.roundCorners([.topRight, .topLeft, .bottomRight, .bottomLeft], radius: radiusRoundCorner)
         nameLabel.sizeToFit()
         surnameLabel.sizeToFit()
         ageLabel.sizeToFit()
@@ -268,7 +146,7 @@ class InformationAboutUserTableViewController: UITableViewController {
         var mainInformations = [MainInfo]()
         
         for i in 0 ..< 5 {
-            let mainInfo = MainInfo(title: "\(mainInfoTitleArray[i])", info: "\(mainInfoSubtitleArry[i][Int(arc4random_uniform(UInt32(mainInfoSubtitleArry[i].count)))])")
+            let mainInfo = MainInfo(title: "\(mainInfoTitleArray[i])", info: "\(mainInfoSubtitleArray[i][Int(arc4random_uniform(UInt32(mainInfoSubtitleArray[i].count)))])")
             mainInformations.append(mainInfo)
         }
         
@@ -338,14 +216,14 @@ class InformationAboutUserTableViewController: UITableViewController {
             
         case .mainInfo:
             let cell = tableView.dequeueReusableCell(withIdentifier: mainInfoCellIdentifier, for: indexPath) as! MainInfoTableViewCell
-            let mainInfoItem = item as! InformationViewModelMainInfoItem
-            cell.prepateCell(with: mainInfoItem.mainInformations[indexPath.row])
+            let mainInfoItemModel = item as! InformationViewModelMainInfoItem
+            cell.prepareCell(with: mainInfoItemModel.mainInformations[indexPath.row])
             return cell
             
         case .contacts:
             let cell = tableView.dequeueReusableCell(withIdentifier: contactsCellIdentifier, for: indexPath) as! ContactsTableViewCell
-            let contactInfoItem = item as! InformationViewModelContactsItem
-            cell.prepareCell(with: contactInfoItem.contacts[indexPath.row])
+            let contactInfoItemModel = item as! InformationViewModelContactsItem
+            cell.prepareCell(with: contactInfoItemModel.contacts[indexPath.row])
             return cell
             
         case .carier:
@@ -356,8 +234,8 @@ class InformationAboutUserTableViewController: UITableViewController {
             
         case .education:
             let cell = tableView.dequeueReusableCell(withIdentifier: educationCellIdentifier, for: indexPath) as! EducationTableViewCell
-            let educationInfoItem = item as! InformationViewModelEducationItem
-            cell.prepareCell(with: educationInfoItem.educationaEstablishments[indexPath.row])
+            let educationInfoItemModel = item as! InformationViewModelEducationItem
+            cell.prepareCell(with: educationInfoItemModel.educationaEstablishments[indexPath.row])
             return cell
             
         case .gifts:
@@ -367,8 +245,8 @@ class InformationAboutUserTableViewController: UITableViewController {
             
         case .moreInfo:
             let cell = tableView.dequeueReusableCell(withIdentifier: moreInfoCellIdentifier, for: indexPath) as! MoreInfoTableViewCell
-            let moreInfoItem = item as! InformationViewModelMoreInfoItem
-            cell.prepareCell(with: moreInfoItem.moreInformations[indexPath.row])
+            let moreInfoItemModel = item as! InformationViewModelMoreInfoItem
+            cell.prepareCell(with: moreInfoItemModel.moreInformations[indexPath.row])
             return cell
                         
         }
@@ -383,19 +261,19 @@ class InformationAboutUserTableViewController: UITableViewController {
         let item = items[indexPath.section]
         switch item.type {
         case .contacts:
-            return 40
+            return contactsCellHeight
         
         case .carier:
-            return 78
+            return carierCellHeight
             
         case .mainInfo:
-            return 49
+            return mainInfoCellHeight
             
         case .gifts:
-            return 122
+            return giftsCellHeight
             
         default:
-            return 44
+            return defaultCellHeight
         }
     }
 }

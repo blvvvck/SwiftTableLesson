@@ -45,7 +45,7 @@
             <connections>
                 <outlet property="avatarImageView" destination="prr-gb-dAt" id="t24-ed-S3Q"/>
                 <outlet property="nameLabel" destination="Ptw-Rs-SjN" id="N8l-Fd-ztw"/>
-                <outlet property="onlineImage" destination="IpX-qo-J20" id="wAS-PD-vY0"/>
+                <outlet property="onlineImageView" destination="IpX-qo-J20" id="ZWz-Rb-6dU"/>
                 <outlet property="surnameLabel" destination="ntE-xv-Ffg" id="yxe-W5-mTc"/>
             </connections>
             <point key="canvasLocation" x="34" y="67"/>

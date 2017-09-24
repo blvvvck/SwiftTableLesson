@@ -10,14 +10,13 @@ import UIKit
 
 class ContactsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var iconImage: UIImageView!
-    
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var contactLabel: UILabel!
     
     func prepareCell(with contactModel: Contacts) {
-        iconImage.image = contactModel.image
+        iconImageView.image = contactModel.image
         contactLabel.text = contactModel.contact
         contactLabel.sizeToFit()
-        iconImage.sizeToFit()
+        iconImageView.sizeToFit()
     }
 }

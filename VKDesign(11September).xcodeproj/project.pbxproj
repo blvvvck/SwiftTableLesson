@@ -27,9 +27,19 @@
 		953E594F1F77170200418F1F /* EducationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953E594D1F77170200418F1F /* EducationTableViewCell.xib */; };
 		953E59521F77C8FE00418F1F /* GiftsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E59501F77C8FE00418F1F /* GiftsTableViewCell.swift */; };
 		953E59531F77C8FE00418F1F /* GiftsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953E59511F77C8FE00418F1F /* GiftsTableViewCell.xib */; };
+		954445AD1F786810000C1F5E /* InformationViewModelItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954445AC1F786810000C1F5E /* InformationViewModelItemType.swift */; };
+		954445AF1F786836000C1F5E /* InformationViewModelStatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954445AE1F786836000C1F5E /* InformationViewModelStatusItem.swift */; };
+		954445B21F7868C8000C1F5E /* InformationViewModelMainInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954445B11F7868C8000C1F5E /* InformationViewModelMainInfoItem.swift */; };
+		954445B41F7868F9000C1F5E /* InformationViewModelContactsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954445B31F7868F9000C1F5E /* InformationViewModelContactsItem.swift */; };
+		954445B61F786930000C1F5E /* InformationViewModelCarierItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954445B51F786930000C1F5E /* InformationViewModelCarierItem.swift */; };
+		954445B81F786956000C1F5E /* InformationViewModelEducationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954445B71F786956000C1F5E /* InformationViewModelEducationItem.swift */; };
+		954445BA1F786987000C1F5E /* InformationViewModelGiftsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954445B91F786987000C1F5E /* InformationViewModelGiftsItem.swift */; };
+		954445BC1F7869A4000C1F5E /* InformationViewModelMoreInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954445BB1F7869A4000C1F5E /* InformationViewModelMoreInfoItem.swift */; };
+		956B69881F78628E006B6364 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B69871F78628E006B6364 /* ViewExtensions.swift */; };
 		95CC0C011F7014A300331F8A /* FollowersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC0C001F7014A300331F8A /* FollowersTableViewController.swift */; };
 		95CC0C041F7014E900331F8A /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC0C021F7014E900331F8A /* FollowerTableViewCell.swift */; };
 		95CC0C051F7014E900331F8A /* FollowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CC0C031F7014E900331F8A /* FollowerTableViewCell.xib */; };
+		95F610591F786716001F71A4 /* InformationViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F610581F786716001F71A4 /* InformationViewModelItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,9 +65,19 @@
 		953E594D1F77170200418F1F /* EducationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationTableViewCell.xib; sourceTree = "<group>"; };
 		953E59501F77C8FE00418F1F /* GiftsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftsTableViewCell.swift; sourceTree = "<group>"; };
 		953E59511F77C8FE00418F1F /* GiftsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GiftsTableViewCell.xib; sourceTree = "<group>"; };
+		954445AC1F786810000C1F5E /* InformationViewModelItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModelItemType.swift; sourceTree = "<group>"; };
+		954445AE1F786836000C1F5E /* InformationViewModelStatusItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModelStatusItem.swift; sourceTree = "<group>"; };
+		954445B11F7868C8000C1F5E /* InformationViewModelMainInfoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModelMainInfoItem.swift; sourceTree = "<group>"; };
+		954445B31F7868F9000C1F5E /* InformationViewModelContactsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModelContactsItem.swift; sourceTree = "<group>"; };
+		954445B51F786930000C1F5E /* InformationViewModelCarierItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModelCarierItem.swift; sourceTree = "<group>"; };
+		954445B71F786956000C1F5E /* InformationViewModelEducationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModelEducationItem.swift; sourceTree = "<group>"; };
+		954445B91F786987000C1F5E /* InformationViewModelGiftsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModelGiftsItem.swift; sourceTree = "<group>"; };
+		954445BB1F7869A4000C1F5E /* InformationViewModelMoreInfoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModelMoreInfoItem.swift; sourceTree = "<group>"; };
+		956B69871F78628E006B6364 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewExtensions.swift; path = ../ViewExtensions.swift; sourceTree = "<group>"; };
 		95CC0C001F7014A300331F8A /* FollowersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersTableViewController.swift; sourceTree = "<group>"; };
 		95CC0C021F7014E900331F8A /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		95CC0C031F7014E900331F8A /* FollowerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowerTableViewCell.xib; sourceTree = "<group>"; };
+		95F610581F786716001F71A4 /* InformationViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModelItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +110,30 @@
 		9523E8CF1F66D516000DC924 /* VKDesign(11September) */ = {
 			isa = PBXGroup;
 			children = (
+				95F610551F7866B7001F71A4 /* Models */,
+				95F610541F786693001F71A4 /* ViewControllers */,
+				95F610531F786654001F71A4 /* CustomCells */,
+				956B69891F786395006B6364 /* Extensions */,
 				9523E8D01F66D516000DC924 /* AppDelegate.swift */,
-				9523E8D21F66D516000DC924 /* ViewController.swift */,
 				9523E8D41F66D516000DC924 /* Main.storyboard */,
-				953E59391F7438EF00418F1F /* InformationAboutUserTableViewController.swift */,
+				9523E8D71F66D516000DC924 /* Assets.xcassets */,
+				9523E8D91F66D516000DC924 /* LaunchScreen.storyboard */,
+				9523E8DC1F66D516000DC924 /* Info.plist */,
+			);
+			path = "VKDesign(11September)";
+			sourceTree = "<group>";
+		};
+		956B69891F786395006B6364 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				956B69871F78628E006B6364 /* ViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95F610531F786654001F71A4 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
 				95215AE81F77D5AB00F1CABF /* MoreInfoTableViewCell.swift */,
 				95215AE91F77D5AB00F1CABF /* MoreInfoTableViewCell.xib */,
 				953E59501F77C8FE00418F1F /* GiftsTableViewCell.swift */,
@@ -104,18 +144,40 @@
 				953E59481F76FF0000418F1F /* CarierTableViewCell.xib */,
 				953E59431F76E0A600418F1F /* ContactsTableViewCell.swift */,
 				953E59441F76E0A600418F1F /* ContactsTableViewCell.xib */,
-				95CC0C001F7014A300331F8A /* FollowersTableViewController.swift */,
-				95CC0C021F7014E900331F8A /* FollowerTableViewCell.swift */,
 				953E593B1F75510600418F1F /* StatusTableViewCell.swift */,
 				953E593C1F75510600418F1F /* StatusTableViewCell.xib */,
 				953E593F1F75A77E00418F1F /* MainInfoTableViewCell.swift */,
 				953E59401F75A77E00418F1F /* MainInfoTableViewCell.xib */,
 				95CC0C031F7014E900331F8A /* FollowerTableViewCell.xib */,
-				9523E8D71F66D516000DC924 /* Assets.xcassets */,
-				9523E8D91F66D516000DC924 /* LaunchScreen.storyboard */,
-				9523E8DC1F66D516000DC924 /* Info.plist */,
+				95CC0C021F7014E900331F8A /* FollowerTableViewCell.swift */,
 			);
-			path = "VKDesign(11September)";
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		95F610541F786693001F71A4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9523E8D21F66D516000DC924 /* ViewController.swift */,
+				953E59391F7438EF00418F1F /* InformationAboutUserTableViewController.swift */,
+				95CC0C001F7014A300331F8A /* FollowersTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		95F610551F7866B7001F71A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95F610581F786716001F71A4 /* InformationViewModelItem.swift */,
+				954445AC1F786810000C1F5E /* InformationViewModelItemType.swift */,
+				954445AE1F786836000C1F5E /* InformationViewModelStatusItem.swift */,
+				954445B11F7868C8000C1F5E /* InformationViewModelMainInfoItem.swift */,
+				954445B31F7868F9000C1F5E /* InformationViewModelContactsItem.swift */,
+				954445B51F786930000C1F5E /* InformationViewModelCarierItem.swift */,
+				954445B71F786956000C1F5E /* InformationViewModelEducationItem.swift */,
+				954445B91F786987000C1F5E /* InformationViewModelGiftsItem.swift */,
+				954445BB1F7869A4000C1F5E /* InformationViewModelMoreInfoItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,13 +263,23 @@
 			files = (
 				953E59451F76E0A600418F1F /* ContactsTableViewCell.swift in Sources */,
 				9523E8D31F66D516000DC924 /* ViewController.swift in Sources */,
+				95F610591F786716001F71A4 /* InformationViewModelItem.swift in Sources */,
+				954445B81F786956000C1F5E /* InformationViewModelEducationItem.swift in Sources */,
 				953E594E1F77170200418F1F /* EducationTableViewCell.swift in Sources */,
+				954445AF1F786836000C1F5E /* InformationViewModelStatusItem.swift in Sources */,
 				9523E8D11F66D516000DC924 /* AppDelegate.swift in Sources */,
+				954445B61F786930000C1F5E /* InformationViewModelCarierItem.swift in Sources */,
 				953E59491F76FF0000418F1F /* CarierTableViewCell.swift in Sources */,
+				954445B41F7868F9000C1F5E /* InformationViewModelContactsItem.swift in Sources */,
 				95CC0C011F7014A300331F8A /* FollowersTableViewController.swift in Sources */,
 				953E593D1F75510600418F1F /* StatusTableViewCell.swift in Sources */,
+				956B69881F78628E006B6364 /* ViewExtensions.swift in Sources */,
+				954445B21F7868C8000C1F5E /* InformationViewModelMainInfoItem.swift in Sources */,
+				954445AD1F786810000C1F5E /* InformationViewModelItemType.swift in Sources */,
+				954445BC1F7869A4000C1F5E /* InformationViewModelMoreInfoItem.swift in Sources */,
 				953E593A1F7438EF00418F1F /* InformationAboutUserTableViewController.swift in Sources */,
 				95215AEA1F77D5AB00F1CABF /* MoreInfoTableViewCell.swift in Sources */,
+				954445BA1F786987000C1F5E /* InformationViewModelGiftsItem.swift in Sources */,
 				953E59411F75A77E00418F1F /* MainInfoTableViewCell.swift in Sources */,
 				95CC0C041F7014E900331F8A /* FollowerTableViewCell.swift in Sources */,
 				953E59521F77C8FE00418F1F /* GiftsTableViewCell.swift in Sources */,

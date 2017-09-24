@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     let docsConst = "docs"
     let randomConst : UInt32 = 100
     let infoSequeIdentifier = "infoIdentifier"
+    let radiusRoundCorner: CGFloat = 50
     
     
     override func viewDidLoad() {
@@ -55,13 +56,16 @@ class ViewController: UIViewController {
         randomSurname()
         randomAge()
         randomLocation()
-        imageCorners(with: avatar)
+        //imageCorners(with: avatar)
         topAboutScrollBorder()
         bottomAboutScrollBorder()
         bottomPhotoScrollBorder()
         photoButtonBorder()
         noteButtonBorder()
         randomInInfoScroll()
+        setNavigationBarColorAndFont()
+        avatar.roundCorners([.topLeft, .topRight, .bottomLeft, .bottomRight], radius: radiusRoundCorner)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,8 +73,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func setNavigationBarColorAndFont(){
         self.navigationController?.navigationBar.barTintColor = navigationBarColor
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -146,10 +149,10 @@ class ViewController: UIViewController {
 
     }
     
-    func imageCorners(with image: UIImageView) {
-        image.layer.cornerRadius = avatarCornersMultiply
-        image.roundCorners([.topLeft, .topRight, .bottomLeft, .bottomRight], radius: 50)
-    }
+//    func imageCorners(with image: UIImageView) {
+//        image.layer.cornerRadius = avatarCornersMultiply
+//        image.roundCorners([.topLeft, .topRight, .bottomLeft, .bottomRight], radius: radiudRoundCorner)
+//    }
     
     func bottomAboutScrollBorder() {
         
@@ -210,12 +213,4 @@ class ViewController: UIViewController {
     
 }
 
-extension UIView {
-    func roundCorners(_ corners:UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        self.layer.mask = mask
-    }
-}
 

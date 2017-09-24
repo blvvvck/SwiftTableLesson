@@ -385,11 +385,12 @@
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="bMb-q4-X0E">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
                         <outlet property="ageLabel" destination="Oq5-1N-81L" id="LDh-qb-gOz"/>
-                        <outlet property="avatar" destination="7kS-74-vr2" id="9vl-XX-Amr"/>
+                        <outlet property="avatarImageView" destination="7kS-74-vr2" id="CMr-FD-WXc"/>
                         <outlet property="locationLabel" destination="PHF-VC-xZV" id="xdF-Jg-vjc"/>
                         <outlet property="nameLabel" destination="HXC-G1-D2r" id="rDO-X6-jFg"/>
                         <outlet property="surnameLabel" destination="vVf-7b-ijP" id="Ny5-8u-daU"/>

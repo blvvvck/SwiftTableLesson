@@ -9,13 +9,13 @@
 import UIKit
 
 class MainInfoTableViewCell: UITableViewCell {
-    @IBOutlet weak var sutitleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
-    func prepateCell(with mainInfo: MainInfo) {
-        sutitleLabel.text = mainInfo.info
-        titleLabel.text = mainInfo.title
-        sutitleLabel.sizeToFit()
+    func prepareCell(with mainInfoModel: MainInfo) {
+        subtitleLabel.text = mainInfoModel.info
+        titleLabel.text = mainInfoModel.title
+        subtitleLabel.sizeToFit()
         titleLabel.sizeToFit()
     }
 }

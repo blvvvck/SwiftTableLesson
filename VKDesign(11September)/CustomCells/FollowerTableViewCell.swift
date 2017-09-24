@@ -12,7 +12,9 @@ class FollowerTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var surnameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var onlineImage: UIImageView!
+    @IBOutlet weak var onlineImageView: UIImageView!
+    
+    let radiusRoundCorner: CGFloat = 50
     
     func prepareCell(with follower: Follower) {
         
@@ -20,11 +22,11 @@ class FollowerTableViewCell: UITableViewCell {
         surnameLabel.text = follower.surname
         nameLabel.sizeToFit()
         surnameLabel.sizeToFit()
-        onlineImage.image = follower.online
+        onlineImageView.image = follower.online
         avatarImageView.image = follower.avatar
         avatarImageView.sizeToFit()
-        onlineImage.sizeToFit()
-        ViewController().imageCorners(with: avatarImageView)
+        onlineImageView.sizeToFit()
+        avatarImageView.roundCorners( [.bottomLeft, .bottomRight, .topLeft, .topRight], radius: radiusRoundCorner)
     }
 }
 

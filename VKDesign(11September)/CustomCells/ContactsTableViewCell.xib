@@ -35,7 +35,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="contactLabel" destination="5Ka-nE-gG5" id="Z5n-dZ-eWb"/>
-                <outlet property="iconImage" destination="XOR-qL-nX5" id="Cs7-Nv-w0c"/>
+                <outlet property="iconImageView" destination="XOR-qL-nX5" id="XaO-pp-FGw"/>
             </connections>
         </tableViewCell>
     </objects>

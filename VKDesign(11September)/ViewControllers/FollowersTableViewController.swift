@@ -27,15 +27,23 @@ class FollowersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        generateFollowers()
+        registrationCell()
+    }
+    
+    func generateFollowers() {
+        
         for _ in 0 ..< 25 {
             let follower = Follower(name: "\(namesArray[Int(arc4random_uniform(UInt32(namesArray.count)))])",
                 surname: "\(surnsmesArray[Int(arc4random_uniform(UInt32(surnsmesArray.count)))])",
                 avatar: followersAvatarArray[Int(arc4random_uniform(UInt32(followersAvatarArray.count)))], online: (onlineArray[Int(arc4random_uniform(UInt32(onlineArray.count)))]))
             followers.append(follower)
         }
-        
-        let nib = UINib(nibName: "FollowerTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
+    }
+    
+    func registrationCell() {
+        let followerCellNib = UINib(nibName: "FollowerTableViewCell", bundle: nil)
+        tableView.register(followerCellNib, forCellReuseIdentifier: cellIdentifier)
     }
     
     override func didReceiveMemoryWarning() {
