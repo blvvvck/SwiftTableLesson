@@ -39,6 +39,10 @@
 		95CC0C011F7014A300331F8A /* FollowersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC0C001F7014A300331F8A /* FollowersTableViewController.swift */; };
 		95CC0C041F7014E900331F8A /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC0C021F7014E900331F8A /* FollowerTableViewCell.swift */; };
 		95CC0C051F7014E900331F8A /* FollowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CC0C031F7014E900331F8A /* FollowerTableViewCell.xib */; };
+		95E6FB781F7951340056C7F7 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6FB771F7951340056C7F7 /* Contacts.swift */; };
+		95E6FB7A1F79516A0056C7F7 /* MainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6FB791F79516A0056C7F7 /* MainInfo.swift */; };
+		95E6FB7C1F79518B0056C7F7 /* EducationalEstablishments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6FB7B1F79518B0056C7F7 /* EducationalEstablishments.swift */; };
+		95E6FB7E1F7951A90056C7F7 /* MoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6FB7D1F7951A90056C7F7 /* MoreInfo.swift */; };
 		95F610591F786716001F71A4 /* InformationViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F610581F786716001F71A4 /* InformationViewModelItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +81,10 @@
 		95CC0C001F7014A300331F8A /* FollowersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersTableViewController.swift; sourceTree = "<group>"; };
 		95CC0C021F7014E900331F8A /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		95CC0C031F7014E900331F8A /* FollowerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowerTableViewCell.xib; sourceTree = "<group>"; };
+		95E6FB771F7951340056C7F7 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		95E6FB791F79516A0056C7F7 /* MainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfo.swift; sourceTree = "<group>"; };
+		95E6FB7B1F79518B0056C7F7 /* EducationalEstablishments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationalEstablishments.swift; sourceTree = "<group>"; };
+		95E6FB7D1F7951A90056C7F7 /* MoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfo.swift; sourceTree = "<group>"; };
 		95F610581F786716001F71A4 /* InformationViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModelItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +139,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		95E6FB751F7950E90056C7F7 /* Models for InformationItem */ = {
+			isa = PBXGroup;
+			children = (
+				95E6FB771F7951340056C7F7 /* Contacts.swift */,
+				95E6FB791F79516A0056C7F7 /* MainInfo.swift */,
+				95E6FB7B1F79518B0056C7F7 /* EducationalEstablishments.swift */,
+				95E6FB7D1F7951A90056C7F7 /* MoreInfo.swift */,
+			);
+			path = "Models for InformationItem";
+			sourceTree = "<group>";
+		};
 		95F610531F786654001F71A4 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +186,7 @@
 		95F610551F7866B7001F71A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95E6FB751F7950E90056C7F7 /* Models for InformationItem */,
 				95F610581F786716001F71A4 /* InformationViewModelItem.swift */,
 				954445AC1F786810000C1F5E /* InformationViewModelItemType.swift */,
 				954445AE1F786836000C1F5E /* InformationViewModelStatusItem.swift */,
@@ -263,7 +283,11 @@
 			files = (
 				953E59451F76E0A600418F1F /* ContactsTableViewCell.swift in Sources */,
 				9523E8D31F66D516000DC924 /* ViewController.swift in Sources */,
+				95E6FB7A1F79516A0056C7F7 /* MainInfo.swift in Sources */,
 				95F610591F786716001F71A4 /* InformationViewModelItem.swift in Sources */,
+				95E6FB7E1F7951A90056C7F7 /* MoreInfo.swift in Sources */,
+				95E6FB781F7951340056C7F7 /* Contacts.swift in Sources */,
+				95E6FB7C1F79518B0056C7F7 /* EducationalEstablishments.swift in Sources */,
 				954445B81F786956000C1F5E /* InformationViewModelEducationItem.swift in Sources */,
 				953E594E1F77170200418F1F /* EducationTableViewCell.swift in Sources */,
 				954445AF1F786836000C1F5E /* InformationViewModelStatusItem.swift in Sources */,

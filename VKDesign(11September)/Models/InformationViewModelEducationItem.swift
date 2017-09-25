@@ -24,7 +24,4 @@ struct InformationViewModelEducationItem: InformationViewModelItem {
     var educationaEstablishments: [EducationalEstablishments]
 }
 
-struct EducationalEstablishments {
-    var type: String
-    var name: String
-}
+

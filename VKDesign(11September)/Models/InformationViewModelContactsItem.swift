@@ -25,7 +25,3 @@ struct InformationViewModelContactsItem: InformationViewModelItem {
     var contacts: [Contacts]
 }
 
-struct Contacts {
-    var image: UIImage
-    var contact: String
-}

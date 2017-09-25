@@ -24,8 +24,4 @@ struct InformationViewModelMoreInfoItem: InformationViewModelItem {
     var moreInformations: [MoreInfo]
 }
 
-struct MoreInfo {
-    var title: String
-    var count: String
-}
 

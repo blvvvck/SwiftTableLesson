@@ -22,5 +22,4 @@ struct InformationViewModelGiftsItem: InformationViewModelItem {
     }
     
     var giftNumbers: String
-    
 }

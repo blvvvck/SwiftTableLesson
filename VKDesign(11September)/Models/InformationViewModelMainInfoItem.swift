@@ -24,7 +24,3 @@ struct InformationViewModelMainInfoItem: InformationViewModelItem {
     var mainInformations: [MainInfo]
 }
 
-struct MainInfo {
-    var title: String
-    var info: String
-}
